@@ -8,38 +8,33 @@ namespace Assignment_3
     public class Planet
     {
         private double _diameter;
-        internal double _mass;
+        private double _mass;
         private int _moonCount;
         private string _name;
         private double _orbitalPeriod;
         private int _ringCount;
         private double rotationPeriod;
 
-        public Planet(string name, double diameter, double mass)
-        {
-            
-        }
 
+       //read only
         public double Diameter
         {
             get
             {
-                throw new System.NotImplementedException();
+                return _diameter;
             }
-            set
-            {
-            }
+           
         }
 
+        //read only
         public double Mass
         {
             get
             {
-                throw new System.NotImplementedException();
+                return _mass;
+
             }
-            set
-            {
-            }
+       
         }
 
         public int MoonCount
@@ -53,15 +48,14 @@ namespace Assignment_3
             }
         }
 
+        //read only
         public string Name
         {
             get
             {
-                throw new System.NotImplementedException();
+                return _name;
             }
-            set
-            {
-            }
+          
         }
 
         public double OrbitalPeriod
@@ -97,9 +91,18 @@ namespace Assignment_3
             }
         }
 
-        public void ToString()
+        public Planet(string name, double diameter, double mass)
         {
-           
+                    
+            this._name = name;
+            this._diameter = diameter;
+            this._mass = mass;
+        }
+
+
+      override public void ToString()
+        {
+            Console.WriteLine("Name: {0}\n Diameter: {1}\n Mass: {2}", Name, Diameter, Mass);
         }
     
     }
